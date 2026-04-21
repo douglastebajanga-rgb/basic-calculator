@@ -27,6 +27,22 @@ function clearDisplay() {
 }
 
 function calculate() {
-  display.value = eval(display.value);
+  let display = document.getElementById("display");
+  let expression = display.value;
+
+  // Prevent division by zero
+  if (expression.includes("/0")) {
+    alert("Cannot divide by zero");
+    display.value = "";
+    return;
+  }
+
+  try {
+    display.value = eval(expression);
+  } catch {
+    alert("Invalid calculation");
+    display.value = "";
+  }
+}
 >>>>>>> dcaa27a253f11d923082c03f9460766195963da0
 }
