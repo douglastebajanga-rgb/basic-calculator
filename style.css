@@ -32,7 +32,7 @@ body {
     gap: 8px;
 }
 
-/* Uniform Button Styling */
+/* Default Uniform Button Styling (Dark Gray) */
 button {
     background-color: #2a2a2a;
     color: #f0f0f0;
@@ -50,6 +50,21 @@ button:hover {
 
 button:active {
     background-color: #454545;
+}
+
+/* Accent Color for Equals and Angle Mode (Teal) */
+.equals, #angle-mode {
+    background-color: #26a69a;
+    color: #ffffff;
+    border-color: #00897b;
+}
+
+.equals:hover, #angle-mode:hover {
+    background-color: #2bbbad;
+}
+
+.equals:active, #angle-mode:active {
+    background-color: #00897b;
 }
 
 /* Screen / Display */
@@ -72,4 +87,58 @@ button:active {
     border-left: 1px solid #333;
     padding-left: 15px;
     width: 180px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #2a2a2a;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    color: #26a69a;
+}
+
+.history-expr {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.history-result {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.empty-msg {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.clear-history-btn {
+    background-color: #333;
+    color: #ccc;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.clear-history-btn:hover {
+    background-color: #444;
 }
