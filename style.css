@@ -5,16 +5,16 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #121212;
+  background-color: #0f1115;
 }
 
 .calculator-container {
   display: flex;
-  gap: 20px;
-  background-color: #1a1a22;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  gap: 16px;
+  background-color: #161922;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -26,15 +26,15 @@ body {
 #display {
   width: 100%;
   height: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   font-size: 22px;
   text-align: right;
   padding: 5px 10px;
   box-sizing: border-box;
-  border: 1px solid #333;
-  border-radius: 8px;
-  background-color: #0d0d11;
-  color: #00ffcc;
+  border: 1px solid #222632;
+  border-radius: 6px;
+  background-color: #0b0d12;
+  color: #e2e8f0;
 }
 
 .buttons {
@@ -45,54 +45,56 @@ body {
 
 button {
   height: 42px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   border: none;
   border-radius: 6px;
-  background-color: #2b2b36;
-  color: #ffffff;
+  background-color: #1e222e;
+  color: #cbd5e1;
   cursor: pointer;
   transition: background 0.15s ease-in-out;
 }
 
 button:hover {
-  background-color: #3b3b4a;
+  background-color: #282d3d;
 }
 
 button.action {
-  background-color: #e63946;
+  background-color: #3b2025;
+  color: #fca5a5;
 }
 
 button.action:hover {
-  background-color: #d62828;
+  background-color: #4c262f;
 }
 
 button.operator {
-  background-color: #ff9f1c;
-  color: #000;
+  background-color: #272d3d;
+  color: #38bdf8;
 }
 
 button.operator:hover {
-  background-color: #e88e13;
+  background-color: #323b4f;
 }
 
 button.sci {
-  background-color: #3a5a40;
-  font-size: 13px;
+  background-color: #1b2727;
+  color: #5eead4;
+  font-size: 12px;
 }
 
 button.sci:hover {
-  background-color: #4f772d;
+  background-color: #233434;
 }
 
 button.equals {
   grid-column: span 2;
-  background-color: #2a9d8f;
-  color: #fff;
+  background-color: #0f766e;
+  color: #ffffff;
 }
 
 button.equals:hover {
-  background-color: #218377;
+  background-color: #115e59;
 }
 
 .zero-btn {
@@ -102,12 +104,13 @@ button.equals:hover {
 /* History Log Panel Styling */
 .history-panel {
   width: 220px;
-  background-color: #23232e;
-  border-radius: 10px;
+  background-color: #11131a;
+  border-radius: 8px;
   padding: 12px;
   display: flex;
   flex-direction: column;
   max-height: 420px;
+  border: 1px solid #1e222e;
 }
 
 .history-header {
@@ -115,26 +118,28 @@ button.equals:hover {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  border-bottom: 1px solid #3d3d4e;
+  border-bottom: 1px solid #1e222e;
   padding-bottom: 6px;
 }
 
 .history-header h3 {
   margin: 0;
-  color: #ffffff;
-  font-size: 16px;
+  color: #e2e8f0;
+  font-size: 14px;
 }
 
 .clear-history-btn {
-  height: 26px;
+  height: 24px;
   padding: 0 8px;
   font-size: 11px;
-  background-color: #4a4a5a;
+  background-color: #1e222e;
+  color: #94a3b8;
   border-radius: 4px;
 }
 
 .clear-history-btn:hover {
-  background-color: #e63946;
+  background-color: #3b2025;
+  color: #fca5a5;
 }
 
 .history-list {
@@ -147,33 +152,33 @@ button.equals:hover {
 
 .history-item {
   padding: 8px;
-  border-bottom: 1px solid #2d2d3a;
+  border-bottom: 1px solid #161922;
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.15s;
 }
 
 .history-item:hover {
-  background-color: #2e2e3d;
+  background-color: #161922;
 }
 
 .history-expr {
-  font-size: 12px;
-  color: #a0a0b0;
+  font-size: 11px;
+  color: #64748b;
   text-align: right;
   word-break: break-all;
 }
 
 .history-result {
-  font-size: 15px;
-  color: #00ffcc;
+  font-size: 14px;
+  color: #5eead4;
   text-align: right;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .empty-msg {
-  color: #6c757d;
-  font-size: 13px;
+  color: #475569;
+  font-size: 12px;
   text-align: center;
   margin-top: 20px;
 }
