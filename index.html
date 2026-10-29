@@ -28,6 +28,20 @@
       <button class="sci" onclick="memorySubtract()">M-</button>
       <button class="sci" onclick="append('Ans')">Ans</button>
 
+      <!-- Advanced Roots & Exponentials -->
+      <button class="sci" onclick="append('cbrt(')">∛x</button>
+      <button class="sci" onclick="append('tenpow(')">10ˣ</button>
+      <button class="sci" onclick="append('abs(')">|x|</button>
+      <button class="sci" onclick="append('ran()')">Ran#</button>
+      <button class="sci" onclick="append('eng(')">ENG</button>
+
+      <!-- Combinatorics Row -->
+      <button class="sci" onclick="append('nPr(')">nPr</button>
+      <button class="sci" onclick="append('nCr(')">nCr</button>
+      <button class="sci" onclick="append(',')">,</button>
+      <button class="sci" onclick="append('fact(')">x!</button>
+      <button class="sci" onclick="append('recip(')">1/x</button>
+
       <!-- Scientific Row 1: Trig -->
       <button class="sci" onclick="append('sin(')">sin</button>
       <button class="sci" onclick="append('cos(')">cos</button>
@@ -49,25 +63,27 @@
       <button class="sci" onclick="append('^')">xʸ</button>
       <button class="operator" onclick="append('+')">+</button>
 
-      <!-- Scientific Row 4: Advanced Utilities -->
-      <button class="sci" onclick="append('fact(')">x!</button>
-      <button class="sci" onclick="append('recip(')">1/x</button>
+      <!-- Scientific Row 4: Constants & Grouping -->
       <button class="sci" onclick="append('π')">π</button>
       <button class="sci" onclick="append('e')">e</button>
       <button class="sci" onclick="append('(')">(</button>
+      <button class="sci" onclick="append(')')">)</button>
+      <button class="operator" onclick="append('.')">.</button>
 
       <!-- Numbers & Basic Operators -->
       <button onclick="append('7')">7</button>
       <button onclick="append('8')">8</button>
       <button onclick="append('9')">9</button>
-      <button class="sci" onclick="append(')')">)</button>
-      <button class="operator" onclick="append('.')">.</button>
-
       <button onclick="append('4')">4</button>
       <button onclick="append('5')">5</button>
+
       <button onclick="append('6')">6</button>
-      <button class="zero-btn" onclick="append('0')">0</button>
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
       <button class="equals" onclick="calculate()">=</button>
+
+      <button class="zero-btn" onclick="append('0')">0</button>
     </div>
   </div>
 

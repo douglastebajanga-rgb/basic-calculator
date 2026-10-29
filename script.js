@@ -67,6 +67,39 @@ function exp(n) {
   return Math.exp(n);
 }
 
+function cbrt(n) {
+  return Math.cbrt(n);
+}
+
+function tenpow(n) {
+  return 10 ** n;
+}
+
+function abs(n) {
+  return Math.abs(n);
+}
+
+function ran() {
+  return Math.random();
+}
+
+function nPr(n, r) {
+  if (r < 0 || r > n) return 0;
+  return fact(n) / fact(n - r);
+}
+
+function nCr(n, r) {
+  if (r < 0 || r > n) return 0;
+  return fact(n) / (fact(r) * fact(n - r));
+}
+
+function eng(n) {
+  if (n === 0) return "0";
+  let exponent = Math.floor(Math.log10(Math.abs(n)) / 3) * 3;
+  let mantissa = n / Math.pow(10, exponent);
+  return `${parseFloat(mantissa.toFixed(4))}×10^${exponent}`;
+}
+
 function calculate() {
   let expression = display.value;
 
@@ -100,6 +133,13 @@ function parseScientificExpression(expr) {
   expr = expr.replace(/π/g, "Math.PI");
   expr = expr.replace(/\be\b/g, "Math.E");
   expr = expr.replace(/sqrt\(/g, "Math.sqrt(");
+  expr = expr.replace(/cbrt\(/g, "cbrt(");
+  expr = expr.replace(/tenpow\(/g, "tenpow(");
+  expr = expr.replace(/abs\(/g, "abs(");
+  expr = expr.replace(/ran\(\)/g, "ran()");
+  expr = expr.replace(/nPr\(/g, "nPr(");
+  expr = expr.replace(/nCr\(/g, "nCr(");
+  expr = expr.replace(/eng\(/g, "eng(");
   expr = expr.replace(/\^2/g, "**2");
   expr = expr.replace(/\^/g, "**");
   expr = expr.replace(/log\(/g, "Math.log10(");

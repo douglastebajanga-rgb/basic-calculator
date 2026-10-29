@@ -95,7 +95,7 @@ button.equals {
   padding: 12px;
   display: flex;
   flex-direction: column;
-  max-height: 420px;
+  max-height: 480px;
   border: 1px solid #1e222e;
 }
 
