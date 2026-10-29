@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scientific Calculator with History</title>
+  <title>Advanced Scientific Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,39 +21,44 @@
       <button class="operator" onclick="append('%')">%</button>
       <button class="operator" onclick="append('/')">/</button>
 
-      <!-- Scientific Functions Row 1 -->
+      <!-- Scientific Row 1: Trig -->
       <button class="sci" onclick="append('sin(')">sin</button>
       <button class="sci" onclick="append('cos(')">cos</button>
       <button class="sci" onclick="append('tan(')">tan</button>
       <button class="sci" onclick="append('sqrt(')">√</button>
       <button class="operator" onclick="append('*')">*</button>
 
-      <!-- Scientific Functions Row 2 -->
+      <!-- Scientific Row 2: Inverse Trig -->
+      <button class="sci" onclick="append('asin(')">sin⁻¹</button>
+      <button class="sci" onclick="append('acos(')">cos⁻¹</button>
+      <button class="sci" onclick="append('atan(')">tan⁻¹</button>
+      <button class="sci" onclick="append('^2')">x²</button>
+      <button class="operator" onclick="append('-')">-</button>
+
+      <!-- Scientific Row 3: Logs & Powers -->
       <button class="sci" onclick="append('log(')">log</button>
       <button class="sci" onclick="append('ln(')">ln</button>
-      <button class="sci" onclick="append('^2')">x²</button>
+      <button class="sci" onclick="append('exp(')">eˣ</button>
       <button class="sci" onclick="append('^')">xʸ</button>
-      <button class="operator" onclick="append('-')">-</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <!-- Scientific Row 4: Advanced Utilities -->
+      <button class="sci" onclick="append('fact(')">x!</button>
+      <button class="sci" onclick="append('recip(')">1/x</button>
+      <button class="sci" onclick="append('π')">π</button>
+      <button class="sci" onclick="append('e')">e</button>
+      <button class="sci" onclick="append('(')">(</button>
 
       <!-- Numbers & Basic Operators -->
       <button onclick="append('7')">7</button>
       <button onclick="append('8')">8</button>
       <button onclick="append('9')">9</button>
-      <button class="sci" onclick="append('(')">(</button>
-      <button class="operator" onclick="append('+')">+</button>
+      <button class="sci" onclick="append(')')">)</button>
+      <button class="operator" onclick="append('.')">.</button>
 
       <button onclick="append('4')">4</button>
       <button onclick="append('5')">5</button>
       <button onclick="append('6')">6</button>
-      <button class="sci" onclick="append(')')">)</button>
-      <button class="sci" onclick="append('π')">π</button>
-
-      <button onclick="append('1')">1</button>
-      <button onclick="append('2')">2</button>
-      <button onclick="append('3')">3</button>
-      <button class="sci" onclick="append('e')">e</button>
-      <button class="operator" onclick="append('.')">.</button>
-
       <button class="zero-btn" onclick="append('0')">0</button>
       <button class="equals" onclick="calculate()">=</button>
     </div>

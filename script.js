@@ -20,12 +20,29 @@ function deleteLast() {
   display.value = display.value.slice(0, -1);
 }
 
+// Math Helper Functions for Step 1
+function fact(n) {
+  if (n < 0 || !Number.isInteger(n)) return NaN;
+  if (n === 0 || n === 1) return 1;
+  let result = 1;
+  for (let i = 2; i <= n; i++) result *= i;
+  return result;
+}
+
+function recip(n) {
+  if (n === 0) return "Error";
+  return 1 / n;
+}
+
+function exp(n) {
+  return Math.exp(n);
+}
+
 function calculate() {
   let expression = display.value;
 
   if (!expression) return;
 
-  // Prevent division by zero check
   if (/\/0(?!\d)/.test(expression)) {
     alert("Cannot divide by zero");
     display.value = "";
@@ -36,14 +53,11 @@ function calculate() {
     let parsedExpression = parseScientificExpression(expression);
     let result = eval(parsedExpression);
 
-    // Format floating point results cleanly
-    if (typeof result === "number" && !Number.isInteger(result)) {
+    if (typeof result === "number" && !Number.isInteger(result) && !isNaN(result)) {
       result = parseFloat(result.toFixed(8));
     }
 
-    // Add calculation to history log
     addHistoryEntry(expression, result);
-
     display.value = result;
   } catch (error) {
     alert("Invalid calculation");
@@ -59,12 +73,22 @@ function parseScientificExpression(expr) {
   expr = expr.replace(/\^/g, "**");
   expr = expr.replace(/log\(/g, "Math.log10(");
   expr = expr.replace(/ln\(/g, "Math.log(");
+  expr = expr.replace(/exp\(/g, "exp(");
+  expr = expr.replace(/fact\(/g, "fact(");
+  expr = expr.replace(/recip\(/g, "recip(");
 
   const angleFactor = isDegreeMode ? "*(Math.PI/180)" : "";
+  const inverseAngleFactor = isDegreeMode ? "*(180/Math.PI)" : "";
 
+  // Standard Trigonometry
   expr = expr.replace(/sin\(([^)]+)\)/g, (match, arg) => `Math.sin((${arg})${angleFactor})`);
   expr = expr.replace(/cos\(([^)]+)\)/g, (match, arg) => `Math.cos((${arg})${angleFactor})`);
   expr = expr.replace(/tan\(([^)]+)\)/g, (match, arg) => `Math.tan((${arg})${angleFactor})`);
+
+  // Inverse Trigonometry
+  expr = expr.replace(/asin\(([^)]+)\)/g, (match, arg) => `(Math.asin(${arg})${inverseAngleFactor})`);
+  expr = expr.replace(/acos\(([^)]+)\)/g, (match, arg) => `(Math.acos(${arg})${inverseAngleFactor})`);
+  expr = expr.replace(/atan\(([^)]+)\)/g, (match, arg) => `(Math.atan(${arg})${inverseAngleFactor})`);
 
   return expr;
 }
@@ -90,7 +114,6 @@ function renderHistory() {
       <div class="history-expr">${item.expr}</div>
       <div class="history-result">= ${item.result}</div>
     `;
-    // Click on history item to load result into display
     li.onclick = () => {
       display.value = item.result;
     };
@@ -102,3 +125,21 @@ function clearHistory() {
   history = [];
   renderHistory();
 }
+
+/* Keyboard Input Listener */
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if ((key >= "0" && key <= "9") || key === "." || key === "+" || key === "-" || key === "*" || key === "/" || key === "%" || key === "(" || key === ")") {
+    append(key);
+  } else if (key === "^") {
+    append("^");
+  } else if (key === "Enter" || key === "=") {
+    event.preventDefault();
+    calculate();
+  } else if (key === "Backspace") {
+    deleteLast();
+  } else if (key === "Escape") {
+    clearDisplay();
+  }
+});
