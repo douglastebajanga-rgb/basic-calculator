@@ -59,6 +59,7 @@ button:hover {
   background-color: #282d3d;
 }
 
+/* Red for Clear (C) and Backspace (⌫) */
 button.action {
   background-color: #3b2025;
   color: #fca5a5;
@@ -68,33 +69,18 @@ button.action:hover {
   background-color: #4c262f;
 }
 
-button.operator {
-  background-color: #272d3d;
-  color: #38bdf8;
+/* Blue for DEG and Equals (=) */
+#angle-mode, button.equals {
+  background-color: #1d4ed8;
+  color: #ffffff;
 }
 
-button.operator:hover {
-  background-color: #323b4f;
-}
-
-button.sci {
-  background-color: #1b2727;
-  color: #5eead4;
-  font-size: 12px;
-}
-
-button.sci:hover {
-  background-color: #233434;
+#angle-mode:hover, button.equals:hover {
+  background-color: #1e40af;
 }
 
 button.equals {
   grid-column: span 2;
-  background-color: #0f766e;
-  color: #ffffff;
-}
-
-button.equals:hover {
-  background-color: #115e59;
 }
 
 .zero-btn {
