@@ -20,12 +20,25 @@ body {
     gap: 20px;
 }
 
+/* Main Calculator Body & Keypad Grid */
+.calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
 /* Uniform Button Styling */
 button {
     background-color: #2a2a2a;
     color: #f0f0f0;
     border: 1px solid #333;
     border-radius: 6px;
+    padding: 12px;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
@@ -49,6 +62,8 @@ button:active {
     font-size: 1.8rem;
     text-align: right;
     margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* History Panel */
@@ -56,4 +71,5 @@ button:active {
     background: #181818;
     border-left: 1px solid #333;
     padding-left: 15px;
+    width: 180px;
 }
