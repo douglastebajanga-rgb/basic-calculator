@@ -2,6 +2,8 @@ const display = document.getElementById("display");
 const historyList = document.getElementById("history-list");
 let isDegreeMode = true;
 let history = [];
+let memory = 0;
+let lastAns = 0;
 
 function toggleAngleMode() {
   isDegreeMode = !isDegreeMode;
@@ -20,7 +22,34 @@ function deleteLast() {
   display.value = display.value.slice(0, -1);
 }
 
-// Math Helper Functions for Step 1
+// Memory Functions
+function memoryClear() {
+  memory = 0;
+}
+
+function memoryRecall() {
+  display.value += memory;
+}
+
+function memoryAdd() {
+  try {
+    let currentVal = eval(parseScientificExpression(display.value));
+    if (!isNaN(currentVal)) memory += currentVal;
+  } catch (e) {
+    alert("Invalid value for M+");
+  }
+}
+
+function memorySubtract() {
+  try {
+    let currentVal = eval(parseScientificExpression(display.value));
+    if (!isNaN(currentVal)) memory -= currentVal;
+  } catch (e) {
+    alert("Invalid value for M-");
+  }
+}
+
+// Math Helper Functions
 function fact(n) {
   if (n < 0 || !Number.isInteger(n)) return NaN;
   if (n === 0 || n === 1) return 1;
@@ -57,6 +86,7 @@ function calculate() {
       result = parseFloat(result.toFixed(8));
     }
 
+    lastAns = result;
     addHistoryEntry(expression, result);
     display.value = result;
   } catch (error) {
@@ -66,6 +96,7 @@ function calculate() {
 }
 
 function parseScientificExpression(expr) {
+  expr = expr.replace(/\bAns\b/g, lastAns);
   expr = expr.replace(/π/g, "Math.PI");
   expr = expr.replace(/\be\b/g, "Math.E");
   expr = expr.replace(/sqrt\(/g, "Math.sqrt(");
@@ -80,12 +111,10 @@ function parseScientificExpression(expr) {
   const angleFactor = isDegreeMode ? "*(Math.PI/180)" : "";
   const inverseAngleFactor = isDegreeMode ? "*(180/Math.PI)" : "";
 
-  // Standard Trigonometry
   expr = expr.replace(/sin\(([^)]+)\)/g, (match, arg) => `Math.sin((${arg})${angleFactor})`);
   expr = expr.replace(/cos\(([^)]+)\)/g, (match, arg) => `Math.cos((${arg})${angleFactor})`);
   expr = expr.replace(/tan\(([^)]+)\)/g, (match, arg) => `Math.tan((${arg})${angleFactor})`);
 
-  // Inverse Trigonometry
   expr = expr.replace(/asin\(([^)]+)\)/g, (match, arg) => `(Math.asin(${arg})${inverseAngleFactor})`);
   expr = expr.replace(/acos\(([^)]+)\)/g, (match, arg) => `(Math.acos(${arg})${inverseAngleFactor})`);
   expr = expr.replace(/atan\(([^)]+)\)/g, (match, arg) => `(Math.atan(${arg})${inverseAngleFactor})`);
