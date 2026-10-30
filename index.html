@@ -63,27 +63,26 @@
       <button class="sci" onclick="append('^')">xʸ</button>
       <button class="operator" onclick="append('+')">+</button>
 
-      <!-- Scientific Row 4: Constants & Grouping -->
-      <button class="sci" onclick="append('π')">π</button>
-      <button class="sci" onclick="append('e')">e</button>
-      <button class="sci" onclick="append('(')">(</button>
-      <button class="sci" onclick="append(')')">)</button>
-      <button class="operator" onclick="append('.')">.</button>
-
-      <!-- Numbers & Basic Operators (Ordered Properly) -->
+      <!-- Number Pad & Constants (Clean Grid Order) -->
       <button onclick="append('7')">7</button>
       <button onclick="append('8')">8</button>
       <button onclick="append('9')">9</button>
+      <button class="sci" onclick="append('π')">π</button>
+      <button class="sci" onclick="append('e')">e</button>
+
       <button onclick="append('4')">4</button>
       <button onclick="append('5')">5</button>
-
       <button onclick="append('6')">6</button>
+      <button class="sci" onclick="append('(')">(</button>
+      <button class="sci" onclick="append(')')">)</button>
+
       <button onclick="append('1')">1</button>
       <button onclick="append('2')">2</button>
       <button onclick="append('3')">3</button>
-      <button class="operator" onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="equals" onclick="calculate()">=</button>
 
-      <button class="zero-btn equals" onclick="calculate()">=</button>
+      <button class="zero-btn" onclick="append('0')">0</button>
     </div>
   </div>
 
