@@ -79,11 +79,12 @@ button.action:hover {
   background-color: #1e40af;
 }
 
-button.equals {
+/* Perfect 2-column spans for 0 and = */
+.zero-btn {
   grid-column: span 2;
 }
 
-.zero-btn {
+button.equals {
   grid-column: span 2;
 }
 

@@ -14,74 +14,77 @@
     <input type="text" id="display" readonly placeholder="0">
 
     <div class="buttons">
-      <!-- Mode Toggle & Clears -->
+      <!-- Mode Toggle & Clears (Row 1) -->
       <button id="angle-mode" onclick="toggleAngleMode()">DEG</button>
       <button class="action" onclick="clearDisplay()">C</button>
       <button class="action" onclick="deleteLast()">⌫</button>
-      <button class="sci" onclick="append('(')">(</button>
-      <button class="sci" onclick="append(')')">)</button>
+      <button class="operator" onclick="append('%')">%</button>
+      <button class="operator" onclick="append('/')">/</button>
 
-      <!-- Memory & Ans Row -->
+      <!-- Memory & Ans Row (Row 2) -->
       <button class="sci" onclick="memoryClear()">MC</button>
       <button class="sci" onclick="memoryRecall()">MR</button>
       <button class="sci" onclick="memoryAdd()">M+</button>
       <button class="sci" onclick="memorySubtract()">M-</button>
       <button class="sci" onclick="append('Ans')">Ans</button>
 
-      <!-- Advanced Roots & Exponentials -->
+      <!-- Advanced Roots & Exponentials (Row 3) -->
       <button class="sci" onclick="append('cbrt(')">∛x</button>
       <button class="sci" onclick="append('tenpow(')">10ˣ</button>
       <button class="sci" onclick="append('abs(')">|x|</button>
       <button class="sci" onclick="append('ran()')">Ran#</button>
       <button class="sci" onclick="append('eng(')">ENG</button>
 
-      <!-- Combinatorics & Constants -->
+      <!-- Combinatorics & Constants (Row 4) -->
       <button class="sci" onclick="append('nPr(')">nPr</button>
       <button class="sci" onclick="append('nCr(')">nCr</button>
       <button class="sci" onclick="append('fact(')">x!</button>
       <button class="sci" onclick="append('π')">π</button>
       <button class="sci" onclick="append('e')">e</button>
 
-      <!-- Scientific Row 1: Trig -->
+      <!-- Scientific Row 1: Trig (Row 5) -->
       <button class="sci" onclick="append('sin(')">sin</button>
       <button class="sci" onclick="append('cos(')">cos</button>
       <button class="sci" onclick="append('tan(')">tan</button>
       <button class="sci" onclick="append('sqrt(')">√</button>
       <button class="sci" onclick="append('recip(')">1/x</button>
 
-      <!-- Scientific Row 2: Inverse Trig & Powers -->
+      <!-- Scientific Row 2: Inverse Trig & Powers (Row 6) -->
       <button class="sci" onclick="append('asin(')">sin⁻¹</button>
       <button class="sci" onclick="append('acos(')">cos⁻¹</button>
       <button class="sci" onclick="append('atan(')">tan⁻¹</button>
       <button class="sci" onclick="append('^2')">x²</button>
       <button class="sci" onclick="append('^')">xʸ</button>
 
-      <!-- Scientific Row 3: Logs & Modifiers -->
+      <!-- Scientific Row 3: Logs & Grouping (Row 7) -->
       <button class="sci" onclick="append('log(')">log</button>
       <button class="sci" onclick="append('ln(')">ln</button>
       <button class="sci" onclick="append('exp(')">eˣ</button>
-      <button class="sci" onclick="append(',')">,</button>
-      <button class="operator" onclick="append('%')">%</button>
+      <button class="sci" onclick="append('(')">(</button>
+      <button class="sci" onclick="append(')')">)</button>
 
-      <!-- Compact Operator Block (+, -, *, /) & Number Pad -->
+      <!-- Number Pad & Operators (Row 8) -->
       <button onclick="append('7')">7</button>
       <button onclick="append('8')">8</button>
       <button onclick="append('9')">9</button>
-      <button class="operator" onclick="append('/')">/</button>
       <button class="operator" onclick="append('*')">*</button>
+      <button class="operator" onclick="append('/')">/</button>
 
+      <!-- Number Pad & Operators (Row 9) -->
       <button onclick="append('4')">4</button>
       <button onclick="append('5')">5</button>
       <button onclick="append('6')">6</button>
-      <button class="operator" onclick="append('-')">-</button>
       <button class="operator" onclick="append('+')">+</button>
+      <button class="operator" onclick="append('-')">-</button>
 
+      <!-- Number Pad & Operators (Row 10) -->
       <button onclick="append('1')">1</button>
       <button onclick="append('2')">2</button>
       <button onclick="append('3')">3</button>
       <button onclick="append('0')">0</button>
-      <button onclick="append('.')">.</button>
+      <button class="operator" onclick="append('.')">.</button>
 
+      <!-- Equals Bar spanning full width at bottom (Row 11) -->
       <button class="equals" onclick="calculate()">=</button>
     </div>
   </div>
